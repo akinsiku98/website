@@ -1,63 +1,59 @@
-$(window).scroll(function () {
+// Wrap DOM‑ready code here
+$(document).ready(function() {
+  // 1) Typewriter animation
+  const text = "Kehinde Akinsiku";
+  let i = 0;
+  (function typeWriter() {
+    if (i < text.length) {
+      $('#typewriter').append(text.charAt(i));
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  })();
+
+  // 2) Dark mode toggle
+  $('#dark-mode-toggle').click(function() {
+    const theme = $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
+    $('html').attr('data-theme', theme);
+  });
+
+  // 3) Smooth scroll to top (back‑to‑top click)
+  $('#back-to-top').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  // 4) Show/Hide project detail modals
+  $('.view-more').click(function() {
+    const target = $(this).closest('.project-card').data('target');
+    $('#' + target).fadeIn();
+  });
+  $('.close').click(function() {
+    $(this).closest('.modal').fadeOut();
+  });
+  // Click outside modal to close
+  $(window).click(function(e) {
+    if ($(e.target).hasClass('modal')) {
+      $(e.target).fadeOut();
+    }
+  });
+});
+
+// Runs on scroll, for back‑to‑top button & fade‑in sections
+$(window).on('scroll', function() {
+  // Show or hide the back‑to‑top button
   if ($(this).scrollTop() > 200) {
     $('#back-to-top').fadeIn();
   } else {
     $('#back-to-top').fadeOut();
   }
-});
 
-// Smooth scroll to top
-$('#back-to-top').click(function () {
-  $('html, body').animate({ scrollTop: 0 }, 600);
-  return false;
-});
-
-// Fade in sections on scroll
-$(window).on('scroll', function () {
-  $('.fade-section').each(function () {
-    const topOfElement = $(this).offset().top;
+  // Fade sections into view
+  $('.fade-section').each(function() {
+    const topOfElement   = $(this).offset().top;
     const bottomOfWindow = $(window).scrollTop() + $(window).height();
-
     if (bottomOfWindow > topOfElement + 100) {
       $(this).addClass('visible');
     }
   });
 });
-
-// Show/Hide Modals
-$('.view-more').click(function () {
-  const target = $(this).closest('.project-card').data('target');
-  $('#' + target).fadeIn();
-});
-
-$('.close').click(function () {
-  $(this).closest('.modal').fadeOut();
-});
-
-$(window).click(function (e) {
-  if ($(e.target).hasClass('modal')) {
-    $(e.target).fadeOut();
-  }
-});
-
-// Typewriter text
-const text = "Kehinde Akinsiku";
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    $('#typewriter').append(text.charAt(i));
-    i++;
-    setTimeout(typeWriter, 100);
-  }
-}
-$(document).ready(() => {
-  typeWriter();
-
-  // Dark mode toggle
-  $('#dark-mode-toggle').click(() => {
-    const theme = $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
-    $('html').attr('data-theme', theme);
-  });
-});
-
-// Existing code: back-to-top, fade, modals… no change
