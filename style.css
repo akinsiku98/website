@@ -1,8 +1,19 @@
+/* Soft & Feminine Aesthetic Portfolio */
+
+:root {
+  --background: #fff5f7;
+  --primary: #d7bde2;
+  --accent: #f9e0e8;
+  --text: #3b3b3b;
+  --heading: #1f1f1f;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--text);
 }
 
 .container {
@@ -13,10 +24,23 @@ body {
 }
 
 header {
-  background: #111;
-  color: white;
+  background: var(--primary);
+  color: var(--white);
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.5rem 1rem;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
 
 header nav {
@@ -24,25 +48,26 @@ header nav {
 }
 
 header nav a {
-  color: #eee;
+  color: var(--white);
   margin: 0 1rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 header nav a:hover {
   text-decoration: underline;
 }
 
-.intro,
-.about,
-.contact,
-.projects {
-  background: white;
+section {
+  background: var(--white);
   margin: 2rem 0;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: var(--heading);
 }
 
 .project-list {
@@ -52,22 +77,25 @@ header nav a:hover {
 }
 
 .project-card {
-  background: #f1f1f1;
+  background: var(--accent);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  background: #e8e8e8;
+  transform: translateY(-5px);
+  background: #f4d5df;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: white;
+  padding: 1.5rem;
+  background: var(--primary);
+  color: var(--white);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 3rem;
 }
 
 #back-to-top {
@@ -75,15 +103,20 @@ footer {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: #222;
-  color: #fff;
-  padding: 10px 15px;
+  background: var(--accent);
+  color: #000;
+  padding: 12px 15px;
   border-radius: 50%;
   font-size: 18px;
-  cursor: pointer;
+  font-weight: bold;
   text-decoration: none;
-  z-index: 999;
-  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+  background: var(--primary);
+  color: var(--white);
 }
 
 .fade-section {
