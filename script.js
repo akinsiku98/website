@@ -1,15 +1,7 @@
 // Wrap DOM‑ready code here
 $(document).ready(function() {
-  // 1) Typewriter animation
-  const text = "Kehinde Akinsiku";
-  let i = 0;
-  (function typeWriter() {
-    if (i < text.length) {
-      $('#typewriter').append(text.charAt(i));
-      i++;
-      setTimeout(typeWriter, 100);
-    }
-  })();
+  // 1) Fade‑in header
+  $('.fade-header').addClass('visible');
 
   // 2) Dark mode toggle
   $('#dark-mode-toggle').click(function() {
