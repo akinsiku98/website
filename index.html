@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yeh Ling | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kehinde Akinsiku | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
   <header>
-    <h1>Hi, I'm Yeh Ling</h1>
-    <p>Aspiring Developer | Tech Enthusiast | Lifelong Learner</p>
+    <div class="container">
+      <h1>Kehinde Akinsiku</h1>
+      <p>ServiceNow | Software Engineer | Full-Stack Dev Enthusiast</p>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
+  <section class="intro fade-section">
+    <div class="container">
+      <h2>Hello, I’m Kehinde Akinsiku 👋🏾</h2>
+      <p>
+        Kehinde (pronounced Keh-hin-day) is a name from the Yoruba culture in Nigeria. It means “the second-born of twins.”  
+        You can call me <strong>Kenny</strong> 😊
+      </p>
+      <p>
+        I’m a <strong>ServiceNow enthusiast</strong>, <strong>software engineer in progress</strong>, and aspiring <strong>full-stack developer</strong>. 
+        I recently graduated from <strong>Illinois State University</strong> and I’m passionate about building modern, helpful tools for people and businesses.
+      </p>
+      <p>
+        Whether it’s streamlining IT tickets in ServiceNow, learning full-stack frameworks, or playing with frontend design,
+        I love bringing ideas to life through code.
+      </p>
+      <p>
+        This site showcases my projects, my journey, and my future goals as I grow confidently in tech.
+        Thanks for stopping by 🫶🏾
+      </p>
+    </div>
+  </section>
 
-  <main>
-    <section class="intro">
-      <h2>Welcome to My Portfolio</h2>
-      <p>I’m currently learning ServiceNow and exploring cybersecurity. This site will showcase my growth, skills, and the projects I’ve worked on.</p>
-    </section>
-    
-    <section class="projects">
+  <section id="projects" class="projects fade-section">
+    <div class="container">
       <h2>Featured Projects</h2>
-      <ul>
-        <li><strong>Project A:</strong> Description of your first project.</li>
-        <li><strong>Project B:</strong> Description of another project.</li>
-      </ul>
-    </section>
-  </main>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>ServiceNow Ticket Tracker</h3>
+          <p>A simulated ServiceNow clone that handles IT tickets with workflows and forms.</p>
+        </div>
+        <div class="project-card">
+          <h3>Cybersecurity Lab Notes</h3>
+          <p>Hands-on writeups of penetration testing tools and security walkthroughs.</p>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about fade-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <h3>🎓 Education</h3>
+      <p>I graduated from <strong>Illinois State University</strong> with a focus on Computer Science and Information Technology.</p>
+
+      <h3>💼 What I’m Learning</h3>
+      <p>I’m currently mastering <strong>ServiceNow</strong>, studying <strong>cybersecurity</strong>, and building my front-end dev skills.</p>
+
+      <h3>🌱 Goals & Growth</h3>
+      <p>My mission is to become a well-rounded, problem-solving developer — and a confident woman in tech.</p>
+
+      <h3>💖 Fun Fact</h3>
+      <p>I love journaling, good music, thoughtful conversations, and building with purpose. 🌸</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Email: yourname@email.com</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    </div>
+  </section>
+
+  <a href="#" id="back-to-top" title="Back to top">↑</a>
 
   <footer>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/kehinde-akinsiku" target="_blank">LinkedIn</a> | &copy; 2025 Yeh Ling</p>
+    <p>&copy; 2025 Kehinde Akinsiku | All rights reserved</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
