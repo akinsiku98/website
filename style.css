@@ -129,3 +129,59 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Project Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin: 10% auto;
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content ul {
+  padding-left: 1.2rem;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Buttons */
+.project-card button {
+  margin-top: 1rem;
+  padding: 10px 15px;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-card button:hover {
+  background: #b089c7;
+}
