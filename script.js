@@ -39,3 +39,25 @@ $(window).click(function (e) {
     $(e.target).fadeOut();
   }
 });
+
+// Typewriter text
+const text = "Kehinde Akinsiku";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    $('#typewriter').append(text.charAt(i));
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+$(document).ready(() => {
+  typeWriter();
+
+  // Dark mode toggle
+  $('#dark-mode-toggle').click(() => {
+    const theme = $('html').attr('data-theme') === 'dark' ? 'light' : 'dark';
+    $('html').attr('data-theme', theme);
+  });
+});
+
+// Existing code: back-to-top, fade, modals… no change

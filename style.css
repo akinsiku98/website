@@ -7,6 +7,15 @@
   --white: #ffffff;
 }
 
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --background: #1a1a1a;
+  --white: #f2f2f2;
+  --text: #ccc;
+  --primary: #5e4b8b;
+  --accent: #7e60a3;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -36,9 +45,10 @@ header h1 {
   font-size: 2.5rem;
 }
 
-header p {
+header .subtitle {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+  opacity: 0.9;
 }
 
 header nav {
@@ -56,6 +66,23 @@ header nav a:hover {
   text-decoration: underline;
 }
 
+/* Resume button in nav */
+.resume-btn {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.resume-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
 section {
   background: var(--white);
   margin: 2rem 0;
@@ -66,11 +93,13 @@ section {
 
 h2 {
   color: var(--heading);
+  margin-top: 0;
 }
 
+/* Project grid & cards */
 .project-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
@@ -78,24 +107,35 @@ h2 {
   background: var(--accent);
   padding: 1rem;
   border-radius: 12px;
-  transition: 0.2s;
+  transition: transform 0.2s, background 0.2s;
+  text-align: center;
 }
-
 .project-card:hover {
   transform: translateY(-5px);
   background: #f4d5df;
 }
 
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--primary);
-  color: var(--white);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  margin-top: 3rem;
+/* Thumbnail images */
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
 }
 
+/* Fade-in sections */
+.fade-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back to top button */
 #back-to-top {
   display: none;
   position: fixed;
@@ -109,26 +149,14 @@ footer {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
-
 #back-to-top:hover {
   background: var(--primary);
   color: var(--white);
 }
 
-.fade-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Project Modals */
+/* Project modals */
 .modal {
   display: none;
   position: fixed;
@@ -139,7 +167,6 @@ footer {
   height: 100%;
   background: rgba(0,0,0,0.6);
 }
-
 .modal-content {
   background: #fff;
   padding: 2rem;
@@ -149,15 +176,12 @@ footer {
   margin: 10% auto;
   position: relative;
 }
-
 .modal-content h3 {
   margin-top: 0;
 }
-
 .modal-content ul {
   padding-left: 1.2rem;
 }
-
 .modal .close {
   position: absolute;
   top: 10px;
@@ -168,7 +192,8 @@ footer {
 }
 
 /* Buttons */
-.project-card button {
+.project-card button,
+.contact-form button {
   margin-top: 1rem;
   padding: 10px 15px;
   background: var(--primary);
@@ -177,9 +202,47 @@ footer {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
+}
+.project-card button:hover,
+.contact-form button:hover {
+  background: #b089c7;
 }
 
-.project-card button:hover {
-  background: #b089c7;
+/* Contact form styling */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: var(--heading);
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--heading) }
+}
+#typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid var(--heading);
+  animation: typing 3s steps(30,end), blink .75s step-end infinite;
+  width: 0;
 }
