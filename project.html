@@ -1,69 +1,97 @@
-<section class="projects fade-section">
-  <div class="container">
-    <h2>My Projects</h2>
-    <div class="project-list">
-      
-      <!-- Project 1 -->
-      <div class="project-card" data-target="modal1">
-        <h3>Student Planner App</h3>
-        <p>Full-stack Spring Boot + React planner with secure login.</p>
-        <button class="view-more">Learn More</button>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kehinde Akinsiku</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
 
-      <!-- Project 2 -->
-      <div class="project-card" data-target="modal2">
-        <h3>Musket Winery Site</h3>
-        <p>WordPress site with reservations, visuals & Apache hosting.</p>
-        <button class="view-more">Learn More</button>
-      </div>
+  <header>
+    <div class="container">
+      <h1>Projects</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-      <!-- Project 3 -->
-      <div class="project-card" data-target="modal3">
-        <h3>Movie Nights App</h3>
-        <p>Microservices app using Java, REST APIs, GitLab CI/CD.</p>
-        <button class="view-more">Learn More</button>
-      </div>
+  <section class="projects fade-section">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-list">
 
+        <div class="project-card" data-target="modal1">
+          <h3>Student Planner App</h3>
+          <p>Full-stack Spring Boot + React planner with secure login.</p>
+          <button class="view-more">Learn More</button>
+        </div>
+
+        <div class="project-card" data-target="modal2">
+          <h3>Musket Winery Site</h3>
+          <p>WordPress site with reservations, visuals & Apache hosting.</p>
+          <button class="view-more">Learn More</button>
+        </div>
+
+        <div class="project-card" data-target="modal3">
+          <h3>Movie Nights App</h3>
+          <p>Microservices app using Java, REST APIs, GitLab CI/CD.</p>
+          <button class="view-more">Learn More</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Student Planner Application</h3>
+      <ul>
+        <li>Spring Boot + JPA backend with MySQL</li>
+        <li>Frontend: React, HTML, CSS, JS, jQuery, Thyme</li>
+        <li>Secure login, daily task tracking, deadline reminders</li>
+        <li>Used Spring Boot auto-configuration + DI features</li>
+      </ul>
     </div>
   </div>
-</section>
 
-<!-- Modals -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Student Planner Application</h3>
-    <ul>
-      <li>Spring Boot + JPA backend with MySQL</li>
-      <li>Frontend: React, HTML, CSS, JS, jQuery, Thyme</li>
-      <li>Secure login, daily task tracking, deadline reminders</li>
-      <li>Used Spring Boot auto-configuration + DI features</li>
-    </ul>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Musket Winery Application</h3>
+      <ul>
+        <li>Built with WordPress (frontend & backend)</li>
+        <li>UI design focused on accessibility</li>
+        <li>Hosted with Apache web server</li>
+        <li>Tested booking system with real user cases</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Musket Winery Application</h3>
-    <ul>
-      <li>Built with WordPress (frontend & backend)</li>
-      <li>UI design focused on accessibility</li>
-      <li>Hosted with Apache web server</li>
-      <li>Tested booking system with real user cases</li>
-    </ul>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Movie Nights Application</h3>
+      <ul>
+        <li>Java backend with RESTful APIs & microservices</li>
+        <li>Pair programming & version control using Git</li>
+        <li>SQL databases + J2EE patterns</li>
+        <li>Used GitLab CI/CD for automation</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Movie Nights Application</h3>
-    <ul>
-      <li>Java backend with RESTful APIs & microservices</li>
-      <li>Pair programming & version control using Git</li>
-      <li>SQL databases + J2EE patterns</li>
-      <li>Used GitLab CI/CD for automation</li>
-    </ul>
-  </div>
-</div>
+  <footer>
+    <p>&copy; 2025 Kehinde Akinsiku | All rights reserved</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
